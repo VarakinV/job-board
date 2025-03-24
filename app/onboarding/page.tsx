@@ -1,3 +1,9 @@
+import { OnboardingForm } from '@/components/form/onboarding/OnboardingForm';
+
 export default function OnboardingPage() {
-  return <div>Onboarding page</div>;
+  return (
+    <div className="min-h-screen w-screen flex flex-col items-center justify-center py-10">
+      <OnboardingForm />
+    </div>
+  );
 }
