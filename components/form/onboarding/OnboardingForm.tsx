@@ -5,6 +5,7 @@ import Image from 'next/image';
 import { useState } from 'react';
 import { UserTypeSelection } from './UserTypeForm';
 import { CompanyForm } from './CompanyForm';
+import { JobSeekerForm } from './JobSeekerForm';
 
 type UserSelectionType = 'company' | 'jobseeker' | null;
 
@@ -22,7 +23,7 @@ export function OnboardingForm() {
       case 1:
         return <UserTypeSelection onSelect={handleUserSelectionType} />;
       case 2:
-        return userType === 'company' ? <CompanyForm /> : <p>Jobseeker form</p>;
+        return userType === 'company' ? <CompanyForm /> : <JobSeekerForm />;
       default:
         return null;
     }
@@ -36,10 +37,8 @@ export function OnboardingForm() {
           Job<span className="text-primary">Board</span>
         </h1>
       </div>
-      <Card>
-        <CardContent className="max-w-lg w-full p-6">
-          {renderStep()}
-        </CardContent>
+      <Card className="w-full max-w-lg">
+        <CardContent className="p-6">{renderStep()}</CardContent>
       </Card>
     </>
   );
